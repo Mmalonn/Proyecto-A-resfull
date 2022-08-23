@@ -38,4 +38,12 @@ public class CosaRepositoryHibernateImpl implements CosaRepository {
 		entityManager.remove(cosa);
 	}
 
+	@Override
+	public void editarCosa(Cosa cosa, Short id) {
+		Cosa obtenida = entityManager.find(Cosa.class, id);
+		obtenida.setNombre(cosa.getNombre());
+		obtenida.setCantidad(cosa.getCantidad());
+		entityManager.merge(obtenida);
+	}
+
 }

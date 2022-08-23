@@ -37,4 +37,9 @@ public class CosaServiceImpl implements CosaService {
 		cosaRepository.eliminarCosa(id);
 	}
 
+	@Override
+	public void editarCosa(Cosa cosa, Short id) {
+		cosaRepository.editarCosa(cosa, id);
+	}
+
 }

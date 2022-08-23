@@ -14,4 +14,6 @@ public interface CosaRepository {
 
 	void eliminarCosa(Short id);
 
+	void editarCosa(Cosa cosa, Short id);
+
 }
