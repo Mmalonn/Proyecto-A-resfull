@@ -37,5 +37,7 @@ public class CosaDto {
 		this.nombre = cosa.getNombre();
 		this.cantidad = cosa.getCantidad();
 	}
+	
+	public CosaDto() {}
 
 }

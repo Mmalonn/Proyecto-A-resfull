@@ -21,4 +21,15 @@ public class CosaRepositoryHibernateImpl implements CosaRepository {
 		return entityManager.createQuery("from Cosa").getResultList();
 	}
 
+	@Override
+	public Cosa obtenerCosa(Short id) {
+		return entityManager.find(Cosa.class, id);
+	}
+
+	@Override
+	public void nuevaCosa(Cosa cosa) {
+		entityManager.persist(cosa);
+	}
+
+	
 }

@@ -8,4 +8,8 @@ public interface CosaRepository {
 
 	List<Cosa> obtenerCosas();
 
+	Cosa obtenerCosa(Short id);
+
+	void nuevaCosa(Cosa cosa);
+
 }

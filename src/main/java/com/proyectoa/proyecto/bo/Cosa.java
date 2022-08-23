@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.proyectoa.proyecto.rest.dto.CosaDto;
+
 @Entity
 public class Cosa {
 	
@@ -14,13 +16,19 @@ public class Cosa {
 	private short cantidad;
 	
 	public Cosa() {}
-	
+		
 	public Cosa(short id, String nombre, short cantidad) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.cantidad = cantidad;
 	}
+	public Cosa(CosaDto cosaDto) {
+		this.id = cosaDto.getId();
+		this.nombre = cosaDto.getNombre();
+		this.cantidad = cosaDto.getCantidad();
+	}
+
 	public short getId() {
 		return id;
 	}

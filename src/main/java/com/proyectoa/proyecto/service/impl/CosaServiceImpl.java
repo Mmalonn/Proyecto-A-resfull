@@ -22,4 +22,14 @@ public class CosaServiceImpl implements CosaService {
 		return cosaRepository.obtenerCosas();
 	}
 
+	@Override
+	public Cosa obtenerCosa(Short id) {
+		return cosaRepository.obtenerCosa(id);
+	}
+
+	@Override
+	public void nuevaCosa(Cosa cosa) {
+		cosaRepository.nuevaCosa(cosa);
+	}
+
 }

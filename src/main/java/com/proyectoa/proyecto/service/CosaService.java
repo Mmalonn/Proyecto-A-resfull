@@ -8,4 +8,8 @@ public interface CosaService {
 
 	List<Cosa> listarCosas();
 
+	Cosa obtenerCosa(Short id);
+
+	void nuevaCosa(Cosa cosa);
+
 }
