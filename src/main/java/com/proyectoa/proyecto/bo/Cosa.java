@@ -13,6 +13,8 @@ public class Cosa {
 	private String nombre;
 	private short cantidad;
 	
+	public Cosa() {}
+	
 	public Cosa(short id, String nombre, short cantidad) {
 		super();
 		this.id = id;

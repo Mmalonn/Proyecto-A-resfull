@@ -33,6 +33,9 @@ public class CosaDto {
 	}
 
 	public CosaDto(Cosa cosa) {
+		this.id = cosa.getId();
+		this.nombre = cosa.getNombre();
+		this.cantidad = cosa.getCantidad();
 	}
 
 }
