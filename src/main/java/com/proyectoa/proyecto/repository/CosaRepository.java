@@ -12,4 +12,6 @@ public interface CosaRepository {
 
 	void nuevaCosa(Cosa cosa);
 
+	void eliminarCosa(Short id);
+
 }

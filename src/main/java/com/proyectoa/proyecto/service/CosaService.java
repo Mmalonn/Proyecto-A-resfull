@@ -12,4 +12,6 @@ public interface CosaService {
 
 	void nuevaCosa(Cosa cosa);
 
+	void eliminarCosa(Short id);
+
 }

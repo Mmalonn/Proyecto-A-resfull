@@ -13,8 +13,9 @@ import com.proyectoa.proyecto.repository.CosaRepository;
 @Repository
 public class CosaRepositoryHibernateImpl implements CosaRepository {
 
-	@Autowired EntityManager entityManager;
-	
+	@Autowired
+	EntityManager entityManager;
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Cosa> obtenerCosas() {
@@ -31,5 +32,10 @@ public class CosaRepositoryHibernateImpl implements CosaRepository {
 		entityManager.persist(cosa);
 	}
 
-	
+	@Override
+	public void eliminarCosa(Short id) {
+		Cosa cosa = entityManager.find(Cosa.class, id);
+		entityManager.remove(cosa);
+	}
+
 }

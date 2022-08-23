@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,29 +22,34 @@ import com.proyectoa.proyecto.service.CosaService;
 @RequestMapping("/api")
 public class CosaRestController {
 
-	@Autowired CosaService cosaService;
-	
+	@Autowired
+	CosaService cosaService;
+
 	@GetMapping("/cosas")
-	public List<CosaDto> listarCosas(){
-		List<Cosa> cosas= cosaService.listarCosas();
-		List<CosaDto> cosasDto= new ArrayList<CosaDto>();
-		for(Cosa cosa : cosas) {
+	public List<CosaDto> listarCosas() {
+		List<Cosa> cosas = cosaService.listarCosas();
+		List<CosaDto> cosasDto = new ArrayList<CosaDto>();
+		for (Cosa cosa : cosas) {
 			cosasDto.add(new CosaDto(cosa));
 		}
 		return cosasDto;
 	}
-	
+
 	@GetMapping("/cosas/{id}")
 	public CosaDto obtenerCosa(@PathVariable Short id) {
 		Cosa cosa = cosaService.obtenerCosa(id);
 		CosaDto cosaDto = new CosaDto(cosa);
 		return cosaDto;
 	}
-	
+
 	@PostMapping("/cosas")
 	public void nuevaCosa(@RequestBody CosaDto cosaDto) {
 		Cosa cosa = new Cosa(cosaDto);
 		cosaService.nuevaCosa(cosa);
-		
+	}
+
+	@DeleteMapping("/cosas/{id}")
+	public void eliminarCosa(@PathVariable Short id) {
+		cosaService.eliminarCosa(id);
 	}
 }
