@@ -1,11 +1,11 @@
 # Compiled class file
 *.class
 
-# Properties
-*.properties
-
 # Log file
 *.log
+
+# Security
+security.properties
 
 # BlueJ files
 *.ctxt
